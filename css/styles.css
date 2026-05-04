@@ -1,0 +1,294 @@
+:root {
+  --bg: #f3efe6;
+  --surface: #fffaf1;
+  --ink: #24211b;
+  --accent: #cc5a24;
+  --accent-dark: #8f3610;
+  --muted: #6d6458;
+  --line: #d9cfbf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 14%, #f9d7b1 0%, transparent 32%),
+    radial-gradient(circle at 86% 8%, #f4b6a2 0%, transparent 28%),
+    var(--bg);
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.wrap {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.site-header {
+  background: rgba(255, 250, 241, 0.92);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.9rem 0 1rem;
+}
+
+.brand {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.nav-link.current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.hero {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 5vw, 3.1rem);
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  margin-top: 0;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.hero-image {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  margin: 0;
+  padding: 1rem;
+}
+
+.hero-image figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.highlights {
+  padding-bottom: 2.5rem;
+}
+
+.cards,
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card,
+.project-card,
+.form-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.card,
+.project-card {
+  padding: 1rem;
+}
+
+.project-card .tag {
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 0;
+}
+
+.page-main {
+  padding: 2rem 0 2.6rem;
+}
+
+.page-intro {
+  margin-bottom: 1.1rem;
+}
+
+.form-panel {
+  padding: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  border: 1px solid #bfb4a2;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #f1b18a;
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: #ece2d2;
+}
+
+.footer-content {
+  padding: 1rem 0;
+  color: #4f473d;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 48rem) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .cards,
+  .project-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card,
+  .project-card {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  .form-panel {
+    padding: 1.35rem;
+  }
+}
+
+@media (min-width: 72rem) {
+  .hero-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-layout > article,
+  .hero-layout > figure {
+    flex: 1;
+  }
+
+  .card,
+  .project-card {
+    flex: 1 1 calc(33.333% - 0.75rem);
+  }
+}
